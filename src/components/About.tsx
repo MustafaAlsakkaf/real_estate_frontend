@@ -13,7 +13,7 @@ const About = () => {
       className='flex flex-col items-center justify-center container mx-auto p-14 md:px-20 lg:px-32 w-full overflow-hidden'
       id='About'>
       <h1 className='text-2xl sm:text-4xl font-bold mb-4 text-center'>
-        About <span className='text-blue-600'>Us</span>
+        About <span className='!text-[#4B0082]'>Us</span>
       </h1>
       <p className='text-gray-500 max-w-2xl text-center mb-16 mt-10'>
         We are committed to providing the best logistics services, ensuring smooth and reliable
@@ -25,12 +25,12 @@ const About = () => {
         {/* CEO Card */}
         <div className='flex flex-col items-center text-center bg-white p-8 rounded-xl flex-1'>
           <img
-            src={assets.ceo}
+            src={assets.profile}
             alt='CEO'
-            className='w-40 h-40 object-cover object-[center_15%] rounded-full border-4 border-blue-400 shadow-lg mb-6'
+            className='w-40 h-40 object-cover object-[center_15%] rounded-full border-4 border-purple-400 shadow-lg mb-6'
           />
-          <h2 className='text-2xl font-bold text-gray-800'>Muhannad Al-Madhaji</h2>
-          <p className='text-blue-600 font-medium mb-3'>CEO & Founder</p>
+          <h2 className='text-2xl font-bold text-gray-800'>Mustafa Al-Sakkaf</h2>
+          <p className='text-purple-600 font-medium mb-3'>CEO & Founder</p>
           <p className='max-w-md text-gray-600 mb-6'>
             "Leading our company with a vision for innovation, reliability, and customer-first
             service."
@@ -53,25 +53,25 @@ const About = () => {
         <div className='flex flex-col items-center md:items-start mt-10 text-gray-600 flex-1'>
           <div className='grid grid-cols-2 gap-6 md:gap-10 w-full 2xl:pr-28 text-center'>
             <div>
-              <p className='text-4xl font-bold bg-gradient-to-r from-[#72d6e1] to-[#1964bf] text-transparent bg-clip-text'>
+              <p className='text-4xl font-bold bg-gradient-to-r from-[#72d6e1] to-[#4B0082] text-transparent bg-clip-text'>
                 <Counter target={10} />
               </p>
               <p>Years of Experience</p>
             </div>
             <div>
-              <p className='text-4xl font-bold bg-gradient-to-r from-[#72d6e1] to-[#1964bf] text-transparent bg-clip-text'>
+              <p className='text-4xl font-bold bg-gradient-to-r from-[#72d6e1] to-[#4B0082] text-transparent bg-clip-text'>
                 <Counter target={500} />
               </p>
               <p>Shipments</p>
             </div>
             <div>
-              <p className='text-4xl font-bold bg-gradient-to-r from-[#72d6e1] to-[#1964bf] text-transparent bg-clip-text'>
+              <p className='text-4xl font-bold bg-gradient-to-r from-[#72d6e1] to-[#4B0082] text-transparent bg-clip-text'>
                 <Counter target={200} />
               </p>
               <p>Happy Clients</p>
             </div>
             <div>
-              <p className='text-4xl font-bold bg-gradient-to-r from-[#72d6e1] to-[#1964bf] text-transparent bg-clip-text'>
+              <p className='text-4xl font-bold bg-gradient-to-r from-[#72d6e1] to-[#4B0082] text-transparent bg-clip-text'>
                 <Counter target={20} />
               </p>
               <p>Partners</p>

@@ -21,6 +21,8 @@ import ship from './ship.png';
 import truck from './truck.png';
 import logo2 from './logo2.png';
 import ceo from './ceo.jpg';
+import villa from './villa.jpeg';
+import profile from './profile.jpg';
 
 export const assets = {
   // Add your asset imports here
@@ -42,6 +44,7 @@ export const assets = {
   ship,
   truck,
   ceo,
+  profile,
 };
 
 export const servicesData = [
@@ -49,7 +52,7 @@ export const servicesData = [
   {
     title: 'service1',
     location: 'china',
-    image: flight,
+    image: villa,
     icon: air_icon,
     description:
       'We provide air freight services that ensure your cargo reaches its destination swiftly and safely, no matter where you are in the world.',
@@ -57,7 +60,7 @@ export const servicesData = [
   {
     title: 'service2',
     location: 'china',
-    image: ship,
+    image: project_img_2,
     icon: ship_icon,
     description:
       'Our sea freight services offer reliable and cost-effective solutions for transporting large volumes of goods across international waters.',
@@ -65,7 +68,7 @@ export const servicesData = [
   {
     title: 'service3',
     location: 'china',
-    image: truck,
+    image: project_img_1,
     icon: truck_icon,
     description:
       'With our advanced tracking systems, you can monitor your shipments in real-time, ensuring transparency and peace of mind throughout the delivery process.',

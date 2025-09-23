@@ -1,66 +1,72 @@
-import { useEffect, useState } from 'react';
-import Navbar from './Navbar';
-import { motion } from 'framer-motion';
+import { useEffect, useState } from "react";
+import Navbar from "./Navbar";
+import { AnimatePresence, motion } from "framer-motion";
+import ChatContainer from "./Chatbot/ChatContainer";
 
 const Header = () => {
-  // ✅ List of background images
-  const images = ['/header_img.png', '/header_img2.png'];
+  const images = [
+    "/riyadh11.png","/riyadh12.png","/riyadh13.png","/riyadh14.png",
+    "/riyadh15.png","/riyadh16.png","/riyadh17.png","/riyadh18.png",
+    "/riyadh19.png","/riyadh20.png",
+  ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [loaded, setLoaded] = useState<boolean[]>(new Array(images.length).fill(false));
 
-  // ✅ Auto change background every 5s
+  // Preload images
+  useEffect(() => {
+    images.forEach((src, idx) => {
+      const img = new Image();
+      img.src = src;
+      img.onload = () =>
+        setLoaded((prev) => {
+          const copy = [...prev];
+          copy[idx] = true;
+          return copy;
+        });
+    });
+  }, []);
+
+  // Auto slideshow
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex(prev => (prev + 1) % images.length);
-    }, 7000);
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 8000);
     return () => clearInterval(interval);
   }, [images.length]);
 
   return (
-    <div
-      className='relative min-h-screen mb-4 flex items-center w-full overflow-hidden'
-      id='Header'>
-      {/* ✅ Sliding background images */}
-      <div className='absolute inset-0'>
-        {images.map((img, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${
-              index === currentIndex ? 'opacity-100' : 'opacity-0'
-            }`}
-            style={{ backgroundImage: `url(${img})` }}
+    <div className="relative min-h-screen mb-4 flex flex-col w-full overflow-hidden" id="Header">
+      {/* Background slideshow */}
+      <div className="absolute inset-0">
+        <AnimatePresence>
+          <motion.div
+            key={currentIndex}
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: loaded[currentIndex] ? `url(${images[currentIndex]})` : "none",
+            }}
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 1.05 }}
+            transition={{ duration: 1.8, ease: "easeInOut" }}
           />
-        ))}
-        {/* overlay for dark effect (better text readability) */}
-        <div className='absolute inset-0 bg-black/50'></div>
+        </AnimatePresence>
+        <div className="absolute inset-0 bg-black/50"></div>
       </div>
+
       <Navbar />
 
-      {/* ✅ Hero Content */}
-      <motion.div
-        initial={{ opacity: 0, y: 100 }}
-        transition={{ duration: 1.5 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className='relative container text-center mx-auto py-4 px-6 md:px-30 lg:px-52 text-white'>
-        <h2 className='text-5xl sm:text-6xl md:text-[82px] inline-block max-w-3xl font-semibold pt-20'>
-          Explore more with{' '}
-          <span className='bg-gradient-to-r from-[#72d6e1] to-[#1964bf] bg-clip-text text-transparent'>
-            Deal
-          </span>{' '}
-          for Logistics.
-        </h2>
-
-        <div className='mt-16 flex justify-center'>
-          <a
-            href='http://119.8.54.170/express/'
-            target='_blank'
-            rel='noopener noreferrer'
-            className='bg-gradient-to-r from-[#72d6e1] to-[#1964bf] text-white px-8 sm:px-10 py-3 rounded-full text-lg sm:text-xl font-medium shadow-lg hover:opacity-90 transition'>
-            Track Your Order
-          </a>
+      {/* Center Chatbot */}
+      <div className="relative flex flex-col items-center justify-center flex-1 text-white">
+        <div className="flex flex-col items-center mb-6">
+          <div className="bg-gradient-to-r from-purple-500 to-pink-500 p-4 rounded-full shadow-lg">
+            <span className="text-3xl">🤖</span>
+          </div>
+          <h2 className="mt-4 text-lg font-medium opacity-80">Real Estate Advisor</h2>
         </div>
-      </motion.div>
+        <ChatContainer />
+      </div>
     </div>
   );
 };
