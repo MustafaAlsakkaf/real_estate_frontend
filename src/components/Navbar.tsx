@@ -27,33 +27,35 @@ const Navbar = () => {
         <a href="#Header" className="flex items-center gap-2">
           <img
             src={assets.logo2}
-            alt="Deal Service Logistics"
-            className="h-24 w-auto"
+            alt="Jedra"
+            className="w-32 h-23"
           />
         </a>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex gap-16 text-white flex-row">
-          <a href="#Header" className="cursor-pointer text-lg hover:text-gray-400">
-            <li>Home</li>
-          </a>
-          <a href="#About" className="cursor-pointer text-lg hover:text-gray-400">
-            <li>About</li>
-          </a>
-          <a href="#Services" className="cursor-pointer text-lg hover:text-gray-400">
-            <li>Services</li>
-          </a>
-           <a href="#FAQ" className="cursor-pointer text-lg hover:text-gray-400">
-            <li>FAQ</li>
-          </a>
-          {/* <a href="#Contact" className="cursor-pointer text-lg hover:text-gray-400">
-            <li>Contact</li>
-          </a> */}
+        <div className="flex justify-center flex-1">
+         <ul className="hidden md:flex gap-44 text-white flex-row">
+           <a href="#Header" className="cursor-pointer text-2xl hover:text-gray-400">
+             <li>Home</li>
+           </a>
+           <a href="#About" className="cursor-pointer text-2xl hover:text-gray-400">
+             <li>About</li>
+           </a>
+           <a href="#Services" className="cursor-pointer text-2xl hover:text-gray-400">
+             <li>Services</li>
+           </a>
+            {/*<a href="#FAQ" className="cursor-pointer text-2xl hover:text-gray-400">
+             <li>FAQ</li>
+           </a>*/}
+           <a href="#Contact" className="cursor-pointer text-2xl hover:text-gray-400">
+             <li>Contact</li>
+           </a>
         </ul>
+        </div>
 
         {/* Right side */}
-        <div className="flex items-center gap-4">
-          {/* 🔍 Modern Search Bar */}
+       {/* <div className="flex items-center gap-4">
+          {/* 🔍 Modern Search Bar 
           <div className="relative hidden md:block">
             <input
               type="text"
@@ -72,7 +74,7 @@ const Navbar = () => {
             </svg>
           </div>
 
-          {/* Hamburger Menu (mobile only) */}
+          {/* Hamburger Menu (mobile only) 
           <img
             ref={buttonRef}
             onClick={() => setShowMobileMenu(!showMobileMenu)}
@@ -80,7 +82,7 @@ const Navbar = () => {
             alt="Menu"
             className="md:hidden w-7 cursor-pointer"
           />
-        </div>
+        </div>*/}
       </div>
 
       {/* ✅ Mobile Dropdown */}
@@ -102,12 +104,12 @@ const Navbar = () => {
           <a onClick={() => setShowMobileMenu(false)} href="#Services" className="hover:text-gray-400">
             <li>Services</li>
           </a>
-          <a onClick={() => setShowMobileMenu(false)} href="#FAQ" className="hover:text-gray-400">
+          {/*<a onClick={() => setShowMobileMenu(false)} href="#FAQ" className="hover:text-gray-400">
             <li>FAQ</li>
-          </a>
-          {/* <a onClick={() => setShowMobileMenu(false)} href="#Contact" className="hover:text-gray-400">
+          </a>*/}
+          <a onClick={() => setShowMobileMenu(false)} href="#Contact" className="hover:text-gray-400">
             <li>Contact</li>
-          </a> */}
+          </a>
         </ul>
       </div>
     </div>

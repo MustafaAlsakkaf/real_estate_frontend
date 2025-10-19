@@ -4,15 +4,14 @@ import { Facebook, Instagram, Linkedin } from 'lucide-react';
 
 function Footer() {
   return (
-    <div className='pt-10 px-4 md:px-20 lg:px-32 bg-[#24142e] w-full overflow-hidden' id='Footer'>
+    <div className='pt-10 px-4 md:px-20 lg:px-32 bg-gray-900 w-full overflow-hidden' id='Footer'>
       <div className='container mx-auto flex flex-col md:flex-row sm:flex-row justify-between items-start'>
         <div className='w-full md:w-1/3 mb-8 md:mb-0'>
-          <img src={assets.logo2} className='h-24 w-auto' alt='logo' />
-          <p className='text-gray-400 mt-4'>Project-X Real Estate Company</p>
+          <img src={assets.logo2} className='h-36 w-auto' alt='logo2' />
         </div>
         <div className='w-full md:w-1/5 mb-8 md:mb-0'>
           <h3 className='text-lg text-white font-bold mb-4'></h3>
-          <ul className='flex flex-col gap-2 text-gray-400'>
+          <ul className='flex flex-col gap-6 text-gray-400'>
             <a href='#Header' className='hover:text-white'>
               Home
             </a>
@@ -22,13 +21,10 @@ function Footer() {
             <a href='#Services' className='hover:text-white'>
               Services
             </a>
-            <a href='#' className='hover:text-white'>
-              Privacy Policy
-            </a>
           </ul>
         </div>
         <div className='w-full md:w-1/3'>
-          <h3 className='text-lg text-white font-bold mb-4'>Follow Us</h3>
+          <h3 className='text-lg text-white font-bold mb-6'>Follow Us</h3>
           <div className='flex gap-4'>
             <a
               href='https://facebook.com'

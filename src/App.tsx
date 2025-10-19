@@ -4,7 +4,8 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Services from "./components/Services";
 import "react-toastify/dist/ReactToastify.css";
-import Faq from "./components/Faq";
+//import Faq from "./components/Faq";
+import Contact from "./components/Contact";
 
 const App = () => {
   return (
@@ -13,9 +14,9 @@ const App = () => {
       <Header />
       <About />
       <Services />
-      {/* <Testimonials />
-      <Contact /> */}
-      <Faq />
+      {/* <Testimonials /> */}
+      <Contact />
+      {/*<Faq />*/}
       <Footer />
     </div>
   );

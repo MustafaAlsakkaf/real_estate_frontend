@@ -4,18 +4,17 @@ interface Props {
 
 const ChatSuggestions = ({ onPick }: Props) => {
   const suggestions = [
-    "3BR in Al Malqa under 1.2M",
-    "4BR Villa in Hittin",
-    "Ready units in 2025",
-    "properties in Jeddah",
+    "Apartment in Almalqa with 3 bedrooms",
+    "Villa in Riyadh with a private pool",
+    "Luxury penthouse in King Abdullah Financial District",
   ];
   return (
-    <div className="flex flex-wrap text-center justify-center gap-2 mt-3">
+    <div className="flex flex-wrap text-center justify-center  gap-4 mt-0.5">
       {suggestions.map((s, i) => (
         <button
           key={i}
           onClick={() => onPick(s)}
-          className="bg-white text-gray-700 text-xs px-3 py-1 rounded-full border hover:bg-gray-100"
+          className="bg-gray-400 text-whate text-1sm px-1 py-1 rounded-full border hover:bg-gray-100"
         >
           {s}
         </button>

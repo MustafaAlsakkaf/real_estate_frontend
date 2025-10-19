@@ -32,7 +32,7 @@ const ChatContainer = () => {
   };
 
   return (
-    <div className="bg-white/20 backdrop-blur-sm rounded-2xl shadow-lg w-[95%] max-w-4xl p-4 flex flex-col">
+    <div className="w-[95%] max-w-4xl p-4 flex flex-col">
       <ChatMessages messages={messages} chatRef={chatRef} loading={loading} /> {/* pass loading */}
       <ChatSuggestions onPick={sendMessage} />
       <ChatInput input={input} setInput={setInput} onSend={() => sendMessage()} />

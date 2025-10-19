@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import { AnimatePresence, motion } from "framer-motion";
-import ChatContainer from "./Chatbot/ChatContainer";
+//import ChatContainer from "./Chatbot/ChatContainer";
+
 
 const Header = () => {
   const images = [
@@ -36,7 +37,7 @@ const Header = () => {
   }, [images.length]);
 
   return (
-    <div className="relative min-h-screen mb-4 flex flex-col w-full overflow-hidden" id="Header">
+    <div className="relative min-h-screen mb-8 flex flex-col w-full overflow-hidden" id="Header">
       {/* Background slideshow */}
       <div className="absolute inset-0">
         <AnimatePresence>
@@ -57,18 +58,37 @@ const Header = () => {
 
       <Navbar />
 
-      {/* Center Chatbot */}
+      {/* Center Chatbot
       <div className="relative flex flex-col items-center justify-center flex-1 text-white">
-        <div className="flex flex-col items-center mb-6">
-          <div className="bg-gradient-to-r from-purple-500 to-pink-500 p-4 rounded-full shadow-lg">
-            <span className="text-3xl">🤖</span>
+        <div className="flex flex-col items-center mb-1">
+          <div className="bg-gradient-to-r from-gray-400 to-gray-400 p-0.5 rounded-full">
+          <img 
+            src="/Jadeer.png" 
+            alt="Jadeer Real Estate Advisor" 
+            className="w-28 h-28 rounded-full object-cover"
+         />
           </div>
-          <h2 className="mt-4 text-lg font-medium opacity-80">Real Estate Advisor</h2>
+          <h2 className="mt-1 text-3xl font-medium opacity-100">What kind of property are you exploring?</h2>
         </div>
         <ChatContainer />
+      </div>*/}
+      <div className="relative flex flex-col items-center justify-center flex-1 text-white">
+        <div className="flex flex-col items-center mb-1">
+          <div className="bg-gradient-to-r from-gray-400 to-gray-400 p-0.5 rounded-full">
+          </div>
+          <h2 className="mt-1 text-5xl font-medium opacity-100">Redefining How You Find Home..</h2>
+        </div>
       </div>
+
+
+
+
+
+
     </div>
   );
 };
 
 export default Header;
+
+

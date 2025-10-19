@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Mail, Phone } from 'lucide-react';
+//import { Mail, Phone } from 'lucide-react';
 import { FormEvent, useState } from 'react';
 import { toast } from 'react-toastify';
 
@@ -42,21 +42,6 @@ const Contact = () => {
         Contact{' '}
         <span className='underline underline-offset-4 decoration-1 under font-light'>With Us</span>
       </h1>
-      <p className='text-center text-gray-500 mb-12 max-w-80 mx-auto'>
-        Contact us to request a quote today.{' '}
-      </p>
-
-      {/* ✅ New Contact Info Section */}
-      <div className='mt-6 max-w-2xl mx-auto flex flex-col sm:flex-col justify-center gap-6 text-gray-700 items-center'>
-        <div className='flex items-center gap-3'>
-          <Phone className='text-blue-600 w-5 h-5' />
-          <span className='text-sm sm:text-base'>+86 175 517 041 31</span>
-        </div>
-        <div className='flex items-center gap-3'>
-          <Mail className='text-blue-600 w-5 h-5' />
-          <span className='text-sm sm:text-base'>info.deallogistics@gmail.com</span>
-        </div>
-      </div>
 
       {/* ✅ Form section (unchanged) */}
       <form onSubmit={onSubmit} className='max-w-2xl mx-auto text-gray-600 pt-20'>
@@ -102,8 +87,8 @@ const Contact = () => {
         </div>
         <button
           type='submit'
-          className='bg-gradient-to-r from-[#72d6e1] to-[#1964bf] text-white px-8 py-2 rounded shadow hover:opacity-90 transition'>
-          {result ? result : 'Get a Quote'}
+          className='bg-gray-900 text-white px-8 py-2 rounded shadow hover:opacity-90 transition'>
+          {result ? result : 'Send Message'}
         </button>
       </form>
     </motion.div>

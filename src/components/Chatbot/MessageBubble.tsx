@@ -15,8 +15,8 @@ const MessageBubble = ({ msg }: { msg: Message }) => {
       <div
         className={`max-w-[70%] px-4 py-2 rounded-lg text-sm shadow-sm ${
           isUser
-            ? "bg-gray-800 text-white rounded-bl-none"
-            : "bg-gray-100 text-gray-800 rounded-br-none"
+            ? "bg-gray-400 text-white rounded-bl-none"
+            : "bg-white text-gray-400 rounded-br-none"
         }`}
       >
         {msg.text}
