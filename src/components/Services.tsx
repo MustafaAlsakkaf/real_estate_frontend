@@ -25,7 +25,7 @@ export default function Services() {
             {/* Optional button */}
             <div className="mt-8">
               <a
-                href="#Contact"
+                href="https://forms.gle/c8QbDjwp2AUgQB9B6"
                 className="inline-flex items-center justify-center rounded-lg bg-gray-900 px-6 py-3 text-white hover:bg-gray-400"
               >
                 Request a Demo
