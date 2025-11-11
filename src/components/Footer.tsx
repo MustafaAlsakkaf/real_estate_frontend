@@ -7,7 +7,7 @@ function Footer() {
     <div className='pt-10 px-4 md:px-20 lg:px-32 bg-gray-900 w-full overflow-hidden' id='Footer'>
       <div className='container mx-auto flex flex-col md:flex-row sm:flex-row justify-between items-start'>
         <div className='w-full md:w-1/3 mb-8 md:mb-0'>
-          <img src={assets.logo2} className='h-36 w-auto' alt='logo2' />
+          <img src={assets.logo1} className='h-36 w-auto' alt='logo1' />
         </div>
         <div className='w-full md:w-1/5 mb-8 md:mb-0'>
           <h3 className='text-lg text-white font-bold mb-4'></h3>

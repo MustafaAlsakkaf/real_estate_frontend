@@ -19,14 +19,14 @@ import truck_icon from './truck_icon.png';
 import flight from './flight.png';
 import ship from './ship.png';
 import truck from './truck.png';
-import logo2 from './logo2.png';
+import logo1 from './logo1.png';
 import ceo from './ceo.jpg';
 import villa from './villa.jpeg';
 import profile from './profile.jpg';
 
 export const assets = {
   // Add your asset imports here
-  logo2,
+  logo1,
   cross_icon,
   menu_icon,
   star_icon,

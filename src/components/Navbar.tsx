@@ -26,7 +26,7 @@ const Navbar = () => {
         {/* Logo */}
         <a href="#Header" className="flex items-center gap-2">
           <img
-            src={assets.logo2}
+            src={assets.logo1}
             alt="Jedra"
             className="w-32 h-23"
           />
