@@ -53,11 +53,16 @@
     }
 
     h2{
-      margin:0;
-      text-align:center;
-      letter-spacing:6px;
-      color: var(--text);
-    }
+  margin:0;
+  text-align:center;
+  color: var(--text);
+  letter-spacing:0; /* الافتراضي للعربي */
+}
+
+/* التباعد فقط للإنجليزي */
+html[dir="ltr"] h2{
+  letter-spacing:6px;
+}
 
     .sub{
       text-align:center;
