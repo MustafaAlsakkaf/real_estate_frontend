@@ -315,13 +315,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
       .headline{font-size:26px;}
 
-      .description,.feature-list{display:none;}
+      .description{
+        display:block;
+        font-size:14px;
+        line-height:1.7;
+      }
 
+      .feature-list{
+        display:grid;
+        gap:10px;
+        margin-top:18px;
+      }
+
+      
       .form-panel{
         padding:0;
         background:#FFFFFF;
         border-radius:28px 28px 0 0;
-        margin-top:-28px;
+        margin-top:-12px;
         position:relative;
         z-index:2;
       }
