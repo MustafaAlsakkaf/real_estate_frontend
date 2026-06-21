@@ -410,6 +410,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <label id="mobileLabel" for="Mobile">الجوال</label>
           <input id="Mobile" type="text" name="Mobile" maxlength="30" aria-required="true" placeholder="05XXXXXXXX" />
 
+          <label id="unitLabel" for="UNIT_TYPE">نوع الوحدة</label>
+          <select id="UNIT_TYPE" name="UNIT_TYPE" aria-required="true">
+            <option value="">اختر</option>
+            <option value="فيلا زاوية - مساحة البناء 348.44 م - 3,825,000 ريال">فيلا زاوية - مساحة البناء 348.44 م - 3,825,000 ريال</option>
+            <option value="فيلا وسط - مساحة البناء 364.77 م - 3,545,000 ريال">فيلا وسط - مساحة البناء 364.77 م - 3,545,000 ريال</option>
+            <option value="تاون هاوس أرضي - مساحة البناء 189.33 م - 2,190,000 ريال">تاون هاوس أرضي - مساحة البناء 189.33 م - 2,190,000 ريال</option>
+            <option value="تاون هاوس علوي - مساحة البناء 178.16 م - 2,040,000 ريال">تاون هاوس علوي - مساحة البناء 178.16 م - 2,040,000 ريال</option>
+          </select>
+
           <label id="paymentLabel" for="CONTACTCF5">طريقة الشراء</label>
           <select id="CONTACTCF5" name="CONTACTCF5" aria-required="true" onchange="addAriaSelected12802000000997632(this)">
             <option id="chooseOption" value="-None-">اختر</option>
@@ -478,7 +487,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       const mobileLabel = document.getElementById('mobileLabel');
       const paymentLabel = document.getElementById('paymentLabel');
       const msgLabel = document.getElementById('msgLabel');
-
+      const unitLabel = document.getElementById('unitLabel');
+      const unitSelect = document.getElementById('UNIT_TYPE');
       const chooseOption = document.getElementById('chooseOption');
       const cashOption = document.getElementById('cashOption');
       const financeOption = document.getElementById('financeOption');
@@ -490,7 +500,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       if(lang === "en"){
         document.documentElement.setAttribute("dir","ltr");
         document.documentElement.setAttribute("lang","en");
+        unitLabel.innerText = "Unit Type";
 
+        unitSelect.options[0].text = "Select";
+        unitSelect.options[1].text = "Corner Villa - Built-up Area 348.44 sqm - SAR 3,825,000";
+        unitSelect.options[2].text = "Middle Villa - Built-up Area 364.77 sqm - SAR 3,545,000";
+        unitSelect.options[3].text = "Ground Townhouse - Built-up Area 189.33 sqm - SAR 2,190,000";
+        unitSelect.options[4].text = "Upper Townhouse - Built-up Area 178.16 sqm - SAR 2,040,000";
         heroTitle.innerText = "HOKSEN — Villas & Townhouses in Al Narjis";
         heroDesc.innerText = "A residential project with modern designs and limited options in a well-connected location in North Riyadh.";
         feature1.innerText = "Ready to move in";
@@ -515,7 +531,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       } else {
         document.documentElement.setAttribute("dir","rtl");
         document.documentElement.setAttribute("lang","ar");
+        unitLabel.innerText = "نوع الوحدة";
 
+        unitSelect.options[0].text = "اختر";
+        unitSelect.options[1].text = "فيلا زاوية - مساحة البناء 348.44 م - 3,825,000 ريال";
+        unitSelect.options[2].text = "فيلا وسط - مساحة البناء 364.77 م - 3,545,000 ريال";
+        unitSelect.options[3].text = "تاون هاوس أرضي - مساحة البناء 189.33 م - 2,190,000 ريال";
+        unitSelect.options[4].text = "تاون هاوس علوي - مساحة البناء 178.16 م - 2,040,000 ريال";
         heroTitle.innerText = "هوكسن — فلل وتاون هاوس في حي النرجس";
         heroDesc.innerText = "مشروع سكني بتصاميم عصرية وخيارات محدودة، في موقع متصل بأهم الطرق والخدمات شمال الرياض.";
         feature1.innerText = "جاهز للسكن";
@@ -573,8 +595,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     function checkMandatory12802000000997632(){
       applyUTMOverrides();
 
-      var mndFileds = new Array('Last Name', 'Mobile', 'CONTACTCF5');
-      var fldLangVal = new Array('Name - الاسم', 'Mobile - الجوال', 'Payment Method - طريقة الشراء');
+      var mndFileds = new Array('Last Name', 'Mobile', 'UNIT_TYPE', 'CONTACTCF5');
+      var fldLangVal = new Array(
+        'Name - الاسم',
+        'Mobile - الجوال',
+        'Unit Type - نوع الوحدة',
+        'Payment Method - طريقة الشراء'
+   );
+      var fldLangVal = new Array('Name - الاسم', 'Mobile - الجوال', 'Unit Type - نوع الوحدة', 'Payment Method - طريقة الشراء');
 
       for (var i = 0; i < mndFileds.length; i++ ) {
         var fieldObj = document.forms['WebToContacts12802000000997632'][mndFileds[i]];
@@ -604,7 +632,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         smarturlfield.setAttribute('name', 'service');
         webform.appendChild(smarturlfield);
       }
+      var unitType = document.getElementById('UNIT_TYPE').value;
+      var msgField = document.getElementById('CONTACTCF1');
+      var currentMsg = (msgField.value || '').trim();
 
+      var unitText = "نوع الوحدة المرغوبة: " + unitType;
+
+      if (currentMsg.length > 0) {
+          msgField.value = unitText + "\n-------------------\n" + currentMsg;
+      } else {
+          msgField.value = unitText;
+      }
       document.getElementById('submitBtn').setAttribute('disabled', true);
       return true;
     }
